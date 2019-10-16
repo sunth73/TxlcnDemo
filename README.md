@@ -22,7 +22,7 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-consul-discovery</artifactId>
             </dependency>
-        ```
+    ```
 5. 启动类加注解  @EnableDistributedTransaction
      ```java
             @SpringBootApplication
@@ -33,7 +33,7 @@
                     SpringApplication.run(TestA_Application.class,args);
                 }
             }
-        ```
+     ```
 6. application.propertis
         ```properties
             spring.application.name=txlcna
