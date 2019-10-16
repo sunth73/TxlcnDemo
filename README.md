@@ -24,40 +24,39 @@
             </dependency>
         ```
 5. 启动类加注解  @EnableDistributedTransaction
-    ```java
-        @SpringBootApplication
-        @EnableDiscoveryClient
-        @EnableDistributedTransaction
-        public class TestA_Application {
-            public static void main(String[] args) {
-                SpringApplication.run(TestA_Application.class,args);
+     ```java
+            @SpringBootApplication
+            @EnableDiscoveryClient
+            @EnableDistributedTransaction
+            public class TestA_Application {
+                public static void main(String[] args) {
+                    SpringApplication.run(TestA_Application.class,args);
+                }
             }
-        }
-    ```
-    6. application.propertis
-    ```properties
-        spring.application.name=txlcna
-        server.port=8900
-        spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-        spring.datasource.url=jdbc:mysql://127.0.0.1:3306/txlcna?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-          8&serverTimezone=UTC
-        spring.datasource.username=root
-        spring.datasource.password=123456
-        #sql打印
-        logging.level.com.sunth.MapperA=debug
-        #配置注册中心，不配置也可，只要导入consul包
-        #spring.cloud.consul.host=localhost
-        #spring.cloud.consul.port=8500
-        ##注册到consul的服务名称
-        #spring.cloud.consul.discovery.serviceName=txlcna
+        ```
+6. application.propertis
+        ```properties
+            spring.application.name=txlcna
+            server.port=8900
+            spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+            spring.datasource.url=jdbc:mysql://127.0.0.1:3306/txlcna?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-          8&serverTimezone=UTC
+            spring.datasource.username=root
+            spring.datasource.password=123456
+            #sql打印
+            logging.level.com.sunth.MapperA=debug
+            #配置注册中心，不配置也可，只要导入consul包
+            #spring.cloud.consul.host=localhost
+            #spring.cloud.consul.port=8500
+            ##注册到consul的服务名称
+            #spring.cloud.consul.discovery.serviceName=txlcna
 
-        #eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka/
-        #eureka.instance.instance-id=txlcna_8900
-        #eureka.instance.prefer-ip-address=true
-    ```
-    7. 业务层方法加入注解 (@TxTransaction,@LcnTransaction)根据自己需要选择开启哪一类
+            #eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka/
+            #eureka.instance.instance-id=txlcna_8900
+            #eureka.instance.prefer-ip-address=true
+        ```
+7. 业务层方法加入注解 (@TxTransaction,@LcnTransaction)根据自己需要选择开启哪一类
     ```java
         @TxTransaction
-//      @LcnTransaction
         public String  update(int money, String username) {
             String result="";
 
@@ -77,6 +76,6 @@
 
         }
     ```
-    8. 启动下载并导入的TM(或者TM打包后启动该jar包),启动consul(consul agent -dev
+8. 启动下载并导入的TM(或者TM打包后启动该jar包),启动consul(consul agent -dev
 pause)，启动服务端，客户端(feign)
-    9. 测试
+9. 测试
