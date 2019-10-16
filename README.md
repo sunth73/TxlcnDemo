@@ -6,24 +6,24 @@
 3. 搭建springboot项目，并创建serverA,serverB两个module。(一个服务端，一个客户端)
 4. 父pom文件加入
     ```maven
-    <!-- txlcn相关 -->
-    <dependency>
-            <groupId>com.codingapi.txlcn</groupId>
-            <artifactId>txlcn-tc</artifactId>
-            <version>5.0.2.RELEASE</version>
-        </dependency>
+        <!-- txlcn相关 -->
         <dependency>
-            <groupId>com.codingapi.txlcn</groupId>
-            <artifactId>txlcn-txmsg-netty</artifactId>
-            <version>5.0.2.RELEASE</version>
-        </dependency>
-        <!-- consul注册中心相关 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-        </dependency>
-    ```
-  5. 启动类加注解  @EnableDistributedTransaction
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tc</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-txmsg-netty</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
+            <!-- consul注册中心相关 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            </dependency>
+        ```
+5. 启动类加注解  @EnableDistributedTransaction
     ```java
         @SpringBootApplication
         @EnableDiscoveryClient
