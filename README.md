@@ -35,7 +35,7 @@
             }
      ```
 6. application.propertis
-        ``` text
+        ```text
             spring.application.name=txlcna
             server.port=8900
             spring.datasource.driver-class-name=com.mysql.jdbc.Driver
