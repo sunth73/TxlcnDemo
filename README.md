@@ -35,7 +35,7 @@
             }
      ```
 6. application.propertis
-        ```text
+        ```yml
             spring.application.name=txlcna
             server.port=8900
             spring.datasource.driver-class-name=com.mysql.jdbc.Driver
@@ -53,6 +53,7 @@
             #eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka/
             #eureka.instance.instance-id=txlcna_8900
             #eureka.instance.prefer-ip-address=true
+        
         ```
 7. 业务层方法加入注解 (@TxTransaction,@LcnTransaction)根据自己需要选择开启哪一类
     ```java
