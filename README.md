@@ -78,3 +78,8 @@
 8. 启动下载并导入的TM(或者TM打包后启动该jar包),启动consul(consul agent -dev
 pause)，启动服务端，客户端(feign)
 9. 测试
+- consul启动成功，并且微服务注册成功
+![image](https://github.com/sunth73/TxlcnDemo/raw/master/images/consul.jpg)
+- TM启动成功，并且微服务注册成功
+![image](https://github.com/sunth73/TxlcnDemo/raw/master/images/TM1.jpg)
+![image](https://github.com/sunth73/TxlcnDemo/raw/master/images/TM2.jpg)
